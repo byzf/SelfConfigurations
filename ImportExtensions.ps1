@@ -1,0 +1,1 @@
+Get-Content .\extension.txt | ForEach-Object { code --install-extension $_ }

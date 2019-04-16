@@ -1,0 +1,193 @@
+{
+    "files.exclude":
+    {
+        "**/.DS_Store":true,
+        "**/.git":true,
+        "**/.gitmodules":true,
+        "**/*.booproj":true,
+        "**/*.pidb":true,
+        "**/*.suo":true,
+        "**/*.user":true,
+        "**/*.userprefs":true,
+        "**/*.unityproj":true,
+        "**/*.dll":true,
+        "**/*.exe":true,
+        "**/*.pdf":true,
+        "**/*.mid":true,
+        "**/*.midi":true,
+        "**/*.wav":true,
+        "**/*.gif":true,
+        "**/*.ico":true,
+        "**/*.jpg":true,
+        "**/*.jpeg":true,
+        "**/*.png":true,
+        "**/*.psd":true,
+        "**/*.tga":true,
+        "**/*.tif":true,
+        "**/*.tiff":true,
+        "**/*.3ds":true,
+        "**/*.3DS":true,
+        "**/*.fbx":true,
+        "**/*.FBX":true,
+        "**/*.lxo":true,
+        "**/*.LXO":true,
+        "**/*.ma":true,
+        "**/*.MA":true,
+        "**/*.obj":true,
+        "**/*.OBJ":true,
+        "**/*.asset":true,
+        "**/*.cubemap":true,
+        "**/*.flare":true,
+        "**/*.mat":true,
+        "**/*.meta":true,
+        "**/*.prefab":true,
+        "**/*.unity":true,
+        "build/":true,
+        "Build/":true,
+        "Library/":true,
+        "library/":true,
+        "obj/":true,
+        "Obj/":true,
+        "ProjectSettings/":true,
+        "temp/":true,
+        "Temp/":true
+    },
+
+    "csharp.referencesCodeLens.enabled": false,
+    "csharp.testsCodeLens.enabled": false,
+    "editor.codeLens": false,
+    "explorer.confirmDelete": false,
+    "editor.detectIndentation": false,
+    "editor.useTabStops": false,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.multiCursorMergeOverlapping": false,
+    "zenMode.hideStatusBar": false,
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.sideBar.location": "left",
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.wordBasedSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.minimap.enabled": false,
+    "editor.snippetSuggestions": "none",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.tabCompletion": "onlySnippets",
+    "workbench.colorTheme": "Dare (rainglow)",
+
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-w>", "1"],
+            "commands": [
+                "workbench.action.moveEditorToFirstGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "N"],
+            "commands": [
+                "workbench.action.moveEditorToNextGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "P"],
+            "commands": [
+                "workbench.action.moveEditorToPreviousGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "n"],
+            "commands": [
+                "workbench.action.moveEditorLeftInGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "p"],
+            "commands": [
+                "workbench.action.moveEditorRightInGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "K"],
+            "commands": [
+                "workbench.action.moveEditorToAboveGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "J"],
+            "commands": [
+                "workbench.action.moveEditorToBelowGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "H"],
+            "commands": [
+                "workbench.action.moveEditorToLeftGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "L"],
+            "commands": [
+                "workbench.action.moveEditorToRightGroup",
+            ]
+        },
+        {
+            "before": ["<C-w>", "down"],
+            "commands": [
+                "workbench.action.moveActiveEditorGroupDown",
+            ]
+        },
+        {
+            "before": ["<C-w>", "left"],
+            "commands": [
+                "workbench.action.moveActiveEditorGroupLeft",
+            ]
+        },
+        {
+            "before": ["<C-w>", "right"],
+            "commands": [
+                "workbench.action.moveActiveEditorGroupRight",
+            ]
+        },
+        {
+            "before": ["<C-w>", "up"],
+            "commands": [
+                "workbench.action.moveActiveEditorGroupUp",
+            ]
+        },
+        {
+            "before": ["g", "o"],
+            "commands": [
+                "workbench.action.gotoSymbol",
+            ]
+        },
+        {
+            "before": ["g", "O"],
+            "commands": [
+                "workbench.action.showAllSymbol",
+            ]
+        },
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j","k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "git.countBadge": "tracked",
+    "editor.quickSuggestionsDelay": 1,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.enablePreview": false,
+}
