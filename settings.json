@@ -13,11 +13,12 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
 
     //------------------------------
     //--- window
     //------------------------------
-    
     "window.newWindowDimensions": "inherit",
     "window.restoreWindows": "none",
     "window.openFilesInNewWindow": "default",
@@ -26,8 +27,7 @@
     //--- workbench
     //------------------------------
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Goldfish (rainglow)",
-    "workbench.statusBar.feedback.visible": false,
+    "workbench.colorTheme": "Halflife Contrast (rainglow)",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreview": false,
@@ -35,8 +35,9 @@
     //------------------------------
     //--- vim
     //------------------------------
+    "vim.debug.silent": true,
     "vim.autoindent": false,
-    "vim.useSystemClipboard": true,
+    "vim.useSystemClipboard": false,
     "vim.highlightedyank.duration": 600,
     "vim.cursorStylePerMode.insert": "block",
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -182,4 +183,31 @@
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.errors.incompleteClasspath.severity": "ignore",
     "C_Cpp.updateChannel": "Insiders",
+
+    //------------------------------
+    //--- go
+    //------------------------------
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true,
+        "rename": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "goToImplementation": true,
+        "documentSymbols": true,
+        "workspaceSymbols": true,
+        "findReferences": true,
+        "diagnostics": true,
+        "documentLink": true
+    },
+    "go.languageServerFlags": ["-rpc.trace"],
+    "go.lintFlags": [
+        "--enable-all"
+    ],
+    "go.installDependenciesWhenBuilding": false,
+    "go.autocompleteUnimportedPackages": true,
+
 }
