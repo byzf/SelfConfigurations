@@ -26,7 +26,7 @@ set wildmenu
 set shiftwidth=4 tabstop=4 softtabstop=0 smarttab noexpandtab
 set incsearch ignorecase smartcase hlsearch
 set shortmess+=c
-set completeopt=menu,preview
+set completeopt=menuone,noinsert,preview,noselect
 
 """"" Packages
 call plug#begin('~/vimfiles/.cache')
@@ -45,30 +45,37 @@ Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 Plug 'scrooloose/nerdtree',{ 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'brooth/far.vim'
+Plug 'junegunn/fzf',{ 'do': 'go get -u github.com/junegunn/fzf', 'on': 'FZF' }
+Plug 'junegunn/fzf.vim', { 'on': 'FZF' }
+Plug 'brooth/far.vim', { 'on': ['Far', 'F'] }
 " complete
-Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 " helper
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tommcdo/vim-lion'
 Plug 'wellle/targets.vim'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
 Plug 'lfv89/vim-interestingwords'
 " language
 Plug 'fatih/vim-go'
 
 call plug#end()
+
+let mapleader = "\\"
+inoremap <M-o>       <C-o>o
+inoremap <C-j>       <Down>
+inoremap <C-k>       <Up>
+inoremap <C-e>       <C-o><C-e>
+inoremap <C-y>       <C-y><C-y>
 
 """"" Coloscheme
 colorscheme lucius
@@ -76,32 +83,37 @@ colorscheme lucius
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+
 """"" Tabgar
 nnoremap <silent> <F8> :TagbarToggle<CR>
 """"" NerdTree
 nnoremap <silent> <F12> :NERDTreeToggle<CR>
+""""" Startify
+let g:startify_custom_header_quotes = [
+	\ ['Mi~'],
+	\ ['Miao~'],
+	\ ['Gu~'],
+	\ ]
+""""" Insterestingwords
+let g:interestingWordsGUIColors = ['#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF']
 
-""""" WebSearch
-function! WebSearch(type, ...)
-  let sel_save = &selection
-  let &selection = "inclusive"
-  let reg_save = @@
+""""" Async complete
+inoremap <expr> <Esc> pumvisible() ? asyncomplete#close_popup() : "\<Esc>"
+inoremap <c-space> <Plug>(asyncomplete_force_refresh)
+let g:asyncomplete_auto_completeopt = 0
+""""" complete sources
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+	\ 'name': 'ultisnips',
+	\ 'whitelist': ['*'],
+    \ 'priority': 0,
+	\ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+	\ }))
+"""""" snips
+let g:UltiSnipsExpandTrigger="<c-l>"
 
-  if a:0  " Invoked from Visual mode, use '< and '> marks.
-    silent exe "normal! `<" . a:type . "`>y"
-  elseif a:type == 'line'
-    silent exe "normal! '[V']y"
-  elseif a:type == 'block'
-    silent exe "normal! `[\<C-V>`]y"
-  else
-    silent exe "normal! `[v`]y"
-  endif
-
-  let search = substitute(trim(@@), ' \+', '+', 'g')
-  silent exe "!firefox --new-tab 'https://duckduckgo.com/?q=" . search . "'"
-
-  let &selection = sel_save
-  let @@ = reg_save
-endfunction
-nmap <silent> gs :set opfunc=WebSearch<CR>g@
-vmap <silent> gs :<C-u>call WebSearch(visualmode(), 1)<Cr>

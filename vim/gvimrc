@@ -1,7 +1,7 @@
 set vb t_vb=\|40f
 set columns=160
 set lines=60
-set guioptions=aegmt
+set guioptions=!aegmt
 
 set guifont=LiterationMono_NF:h14:cANSI:qDRAFT
 
