@@ -11,12 +11,23 @@
     "editor.wordBasedSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+
+    //------------------------------
+    //--- window
+    //------------------------------
+    "window.newWindowDimensions": "inherit",
+    "window.restoreWindows": "none",
+    "window.openFilesInNewWindow": "default",
 
     //------------------------------
     //--- workbench
     //------------------------------
-    "workbench.colorTheme": "Visual Studio Dark",
-    "workbench.statusBar.feedback.visible": false,
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Halflife Contrast (rainglow)",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreview": false,
@@ -24,8 +35,9 @@
     //------------------------------
     //--- vim
     //------------------------------
+    "vim.debug.silent": true,
     "vim.autoindent": false,
-    "vim.useSystemClipboard": true,
+    "vim.useSystemClipboard": false,
     "vim.highlightedyank.duration": 600,
     "vim.cursorStylePerMode.insert": "block",
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -127,15 +139,18 @@
         }
     ],
 
-    //-------------------------------
+    //------------------------------
     //--- php
-    //-------------------------------
+    //------------------------------
     "php.validate.enable": false,
-    "php.suggest.basic": false,
-    "php.validate.executablePath": "",
     // php-cs-fixer
-    // "php.executablePath": "D:/WHJ_Downloads/php-7.3.4-Win32/php.exe",
-    // "php-cs-fixer.executablePath": "D:/WHJ_Downloads/php-cs-fixer-v2.phar",
+    "php-cs-fixer.executablePath": "D:\\WHJ_Documents\\php-cs-fixer.bat",
+    "php-cs-fixer.config": "D:\\WHJ_Documents\\g.php_cs;.php_cs;.php_cs.dist;",
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer",
+        "editor.snippetSuggestions": "bottom",
+        "editor.tabCompletion": "on"
+    },
 
     //------------------------------
     //--- python
@@ -149,4 +164,50 @@
     //--- posh
     //------------------------------
     "powershell.scriptAnalysis.settingsPath": "d:\\psscript_analyzersettings.psd1",
+
+    //------------------------------
+    //--- javascript
+    //------------------------------
+    "javascript.suggest.autoImports": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0,
+    "terminal.integrated.shell.windows": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "C_Cpp.updateChannel": "Insiders",
+
+    //------------------------------
+    //--- go
+    //------------------------------
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true,
+        "rename": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "goToImplementation": true,
+        "documentSymbols": true,
+        "workspaceSymbols": true,
+        "findReferences": true,
+        "diagnostics": true,
+        "documentLink": true
+    },
+    "go.languageServerFlags": ["-rpc.trace"],
+    "go.lintFlags": [
+        "--enable-all"
+    ],
+    "go.installDependenciesWhenBuilding": false,
+    "go.autocompleteUnimportedPackages": true,
+
 }
