@@ -1,0 +1,41 @@
+set ignorecase smartcase
+set hlsearch incsearch wrapscan
+set showmode
+set visualbell
+set mps+=<:>
+set clipboard+=unnamed
+set timeout timeoutlen=500
+
+set surround
+set commentary
+
+" window
+nnoremap <C-W>c :action CloseContent<cr>
+nnoremap <C-W>t :action ReopenClosedTab<cr>
+nnoremap <C-W>L :action MoveTabRight<cr>
+nnoremap <C-W>J :action MoveTabDown<cr>
+nnoremap <C-W>W :action MoveEditorToOppositeTabGroup<cr>
+
+" normal
+nnoremap ,gc :action JumpToNextChange<cr>
+nnoremap ,gC :action JumpToLastChange<cr>
+
+nnoremap ,gd :action GotoDeclaration<cr>
+nnoremap ,gi :action GotoImplementation<cr>
+nnoremap ,gs :action GotoSuperMethod<cr>
+nnoremap ,gt :action GotoTypeDeclaration<cr>
+nnoremap ,ge :action GotoNextError<cr>
+nnoremap ,gE :action GotoPreviousError<cr>
+
+nnoremap ,lf :action GotoFile<cr>
+nnoremap ,lr :action RecentFiles<cr>
+nnoremap ,ll :action RecentLocations<cr>
+nnoremap ,lc :action GotoClass<cr>
+nnoremap ,ls :action GotoSymbol<cr>
+
+nnoremap ,rf :action RenameFile<cr>
+nnoremap ,nd :action NewDir<cr>
+nnoremap ,nf :action NewFile<cr>
+nnoremap ,ne :action NewElement<cr>
+
+nnoremap ,, :action GotoAction<cr>
